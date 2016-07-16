@@ -207,6 +207,8 @@ my_funct()
 %timeit range(1000)
 100000 loops, best of 3: 7.76 us per loop
 
+%prun <statement>  # Run a statement through the python profiler
+%prun -s <key> <statement>  # Profile and sort results by key, e.g. "cumulative" or "calls"
 # run scripts and debug
 %run
 %run -d  # run in debug mode
@@ -225,6 +227,11 @@ my_funct()
 
 # clean namespace
 %reset
+
+# Run code from clipboard
+%paste
+
+# Retrieve output from 
 ```
 
 ### debugger
