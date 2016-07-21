@@ -8,6 +8,7 @@ Scientific Python Cheatsheet
         - [Types](#types)
         - [Lists](#lists)
         - [Dictionaries](#dictionaries)
+        - [Sets](#sets)
         - [Strings](#strings)
         - [Operators](#operators)
         - [Control Flow](#control-flow)
@@ -77,9 +78,30 @@ sorted([3, 2, 1])                  # returns sorted list
 ```python
 a = {'red': 'rouge', 'blue': 'bleu'}         # dictionary
 b = a['red']                                 # translate item
+'red' in a                                   # Check if a key is in a dictionary
+a.pop('red')                                 # Remove and return a dictionary item
 c = [value for key, value in a.items()]      # loop through contents
 d = a.get('yellow', 'no translation found')  # return default
 a.setdefault('extra', []).append('cyan')     # init key with default
+a2 = {i: i**2 for i in range(10)}            # dictionary comprehension
+a.update(a2)                                 # Update a dictionary with another
+```
+
+### Sets
+
+```python
+# Sets are unordered collections of unique elements. 
+# They cannot be iterated over.
+a = [1, 2, 3, 3, 4]
+unique_a = set(a)      # Reduce a list down to its unique elements
+len(a) == len(set(a))  # Check if all elements of a list are unique
+
+# Standard set operations can be performed
+a = set([1, 2, 3])
+b = set([3, 4, 5])
+a.union(b)
+a.intersection(b)
+a.difference(b)
 ```
 
 ### Strings
@@ -88,6 +110,9 @@ a.setdefault('extra', []).append('cyan')     # init key with default
 a = 'red'                      # assignment
 char = a[2]                    # access individual characters
 'red ' + 'blue'                # string concatenation
+'{} x {} = {}'.format(x, y, z) # Format variables into strings
+'{:.3f} nanoseconds`           # Format to a specified precision
+r'$\omega = 2\pi f$`           # Create TeX strings for displaying in plots
 '1, 2, three'.split(',')       # split string into list
 '.'.join(['1', '2', 'three'])  # concatenate list into string
 ```
